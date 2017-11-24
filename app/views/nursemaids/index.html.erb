@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'new', new_nursemaid_path %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Nanny</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="header-table">
+        <thead>
+        <tr>
+          <td>Name</td>
+          <td>education</td>
+          <td>experience</td>
+          <td>medicine</td>
+          <td>price</td>
+          <td>video</td>
+          <td>description</td>
+        </tr>
+        </thead>
+        <% @nursemaids.each do |nursemaid| %>
+            <tr>
+              <td><%= nursemaid.name %></td>
+              <td><%= nursemaid.education %></td>
+              <td><%= nursemaid.experience %></td>
+              <td><%= nursemaid.medicine %></td>
+              <td><%= nursemaid.price %></td>
+              <td><%= nursemaid.video %></td>
+              <td><%= nursemaid.description %></td>
+              <td><%= link_to 'show', nursemaid_path(nursemaid.id)  %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
+

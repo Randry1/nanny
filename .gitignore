@@ -20,6 +20,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+.idea/*
 .idea/workspace.xml
 .idea/vcs.xml
 .idea/nanny.iml
@@ -27,3 +28,26 @@
 .idea/misc.xml
 .idea/.rakeTasks
 .idea/.generators
+.idea/runConfigurations/Development__nanny.xml
+.idea/runConfigurations/Production__nanny.xml
+.idea/runConfigurations/test__nanny.xml
+.idea/runConfigurations/spec__nanny.xml
+.idea/jsLibraryMappings.xml
+.idea/libraries/jsQ.xml
+.idea/libraries/jsQ.xml
+.idea/libraries/jsQ.xml
+.idea/libraries/jsQ.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/libraries/jsQ.xml
+.idea/libraries/jsQ.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/jsLibraryMappings.xml
+.idea/libraries/jsQ.xml
+.idea/jsLibraryMappings.xml
+.idea/libraries/jsQ.xml

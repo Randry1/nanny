@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to 'All', nursemaids_path %> |
+      <%= link_to 'Edit', edit_nursemaid_path(@nursemaid) %> |
+      <%= link_to 'Destroy', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @nursemaid.name %></h1>
+    </div>
+    <div class="col-md-12">
+      <div class="education">
+        <%= @nursemaid.education %>
+      </div>
+      <div class="experience">
+        <%= @nursemaid.experience %>
+      </div>
+      <div class="medicine">
+        <%= @nursemaid.medicine %>
+      </div>
+      <div class="video">
+        <%= @nursemaid.video %>
+      </div>
+      <div class="description">
+        <%= @nursemaid.description %>
+      </div>
+      <div class="price">
+        <%= @nursemaid.price %>
+      </div>
+
+    </div>
+  </div>
+</div>
