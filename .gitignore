@@ -21,6 +21,7 @@
 .byebug_history
 
 .idea/*
+/.idea/*
 .idea/workspace.xml
 .idea/vcs.xml
 .idea/nanny.iml

@@ -15,7 +15,7 @@ class NursemaidsController < ApplicationController
 
     respond_to do |format|
       if @nursemaid.save
-        format.html {redirect_to @nursemaid}
+        format.html {redirect_to @nursemaid, info: 'Запись создана'}
         format.json {render :show, status: :created, location: @nursemaid}
       else
         format.html  {render :new}
@@ -35,11 +35,12 @@ class NursemaidsController < ApplicationController
   def update
     # @nursemaid = Nursemaid.find(params[:id])
     respond_to do |format|
-      if @nursemaid.update(nursemaid_params)
+      if @nursemaid.update_attributes(nursemaid_params)
         format.html {redirect_to @nursemaid, notice: 'Успешно изменено!'}
         format.json {render :show, status: :ok, location: @nursemaid}
       else
-        format.html {render :edit}
+        flash[:danger] = 'Статься не обновлена'
+        format.html {render :edit, }
         format.json {render json: @nursemaid.errors, status: :unprocessable_entity}
       end
     end
