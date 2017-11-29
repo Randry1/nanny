@@ -20,14 +20,13 @@
         </thead>
         <% @nursemaids.each do |nursemaid| %>
             <tr>
-              <td><%= nursemaid.name %></td>
+              <td><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></td>
               <td><%= nursemaid.education %></td>
               <td><%= nursemaid.experience %></td>
               <td><%= nursemaid.medicine %></td>
               <td><%= nursemaid.price %></td>
               <td><%= nursemaid.video %></td>
               <td><%= nursemaid.description %></td>
-              <td><%= link_to 'show', nursemaid_path(nursemaid.id)  %></td>
             </tr>
         <% end %>
       </table>
