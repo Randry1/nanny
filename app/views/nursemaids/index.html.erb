@@ -1,26 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <%= link_to 'new', new_nursemaid_path %>
+      <h1>Наши няни</h1>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h1>Nanny</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <table class="header-table">
+      <table class="table .table-hover">
         <thead>
         <tr>
-          <td>Name</td>
-          <td>education</td>
-          <td>experience</td>
-          <td>medicine</td>
-          <td>price</td>
+          <td>Имя</td>
+          <td>Образование</td>
+          <td>Опыт</td>
+          <td>Медкнижка</td>
+          <td>Цена</td>
           <td>video</td>
-          <td>description</td>
+          <td>Описание</td>
         </tr>
         </thead>
         <% @nursemaids.each do |nursemaid| %>
