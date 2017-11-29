@@ -15,9 +15,11 @@ class NursemaidsController < ApplicationController
 
     respond_to do |format|
       if @nursemaid.save
-        format.html {redirect_to @nursemaid, info: 'Запись создана'}
+        flash[:info] = 'Запись создана'
+        format.html {redirect_to @nursemaid}
         format.json {render :show, status: :created, location: @nursemaid}
       else
+        flash[:danger] = 'Данные не сохранены!'
         format.html  {render :new}
         format.json {render json: @nursemaid.errors, status: :unprocessable_entity}
       end
@@ -49,6 +51,7 @@ class NursemaidsController < ApplicationController
   def destroy
     # @nursemaid = Nursemaid.find(params[:id])
     @nursemaid.destroy
+    flash[:info] = 'Профиль няни удален'
     redirect_to action: :index
   end
 

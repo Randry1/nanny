@@ -1,13 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <%= link_to 'All', nursemaids_path %> |
-      <%= link_to 'Edit', edit_nursemaid_path(@nursemaid) %> |
-      <%= link_to 'Destroy', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'} %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
       <h1><%= @nursemaid.name %></h1>
     </div>
     <div class="col-md-12">
@@ -38,7 +31,7 @@
       </div>
       <div class="price">
         <p>
-        <%= @nursemaid.price %>
+        Стомиость: <%= @nursemaid.price %>
         </p>
       </div>
       <div class="date">
@@ -46,7 +39,9 @@
           <i>Дата регистрации: <%= @nursemaid.created_at.to_date.strftime("%d %B %Y") %></i>
         </p>
       </div>
-      <div>
+      <div class="btn-block">
+        <%= link_to 'Изменить профиль', edit_nursemaid_path(@nursemaid), class: 'btn btn-info' %>
+        <%= link_to 'Удалить', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger' %>
         <%= link_to 'Назад', :back, class: 'btn btn-default' %>
       </div>
 
