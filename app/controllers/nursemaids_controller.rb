@@ -40,7 +40,7 @@ class NursemaidsController < ApplicationController
         format.json {render :show, status: :ok, location: @nursemaid}
       else
         flash[:danger] = 'Статься не обновлена'
-        format.html {render :edit, }
+        format.html {render :edit }
         format.json {render json: @nursemaid.errors, status: :unprocessable_entity}
       end
     end
