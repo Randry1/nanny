@@ -27,7 +27,9 @@
         </p>
       </div>
       <div class="video">
+        <p>
         <%= @nursemaid.video %>
+        </p>
       </div>
       <div class="description">
         <p>
@@ -35,7 +37,17 @@
         </p>
       </div>
       <div class="price">
+        <p>
         <%= @nursemaid.price %>
+        </p>
+      </div>
+      <div class="date">
+        <p>
+          <i>Дата регистрации: <%= @nursemaid.created_at.to_date.strftime("%d %B %Y") %></i>
+        </p>
+      </div>
+      <div>
+        <%= link_to 'Назад', :back, class: 'btn btn-default' %>
       </div>
 
     </div>
