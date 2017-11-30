@@ -3,48 +3,58 @@
     <div class="col-md-12">
       <h1><%= @nursemaid.name %></h1>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-12">
-      <div class="education">
-        <p>
-          Образование: <%= @nursemaid.education %>
-        </p>
+      <div class="col-md-4">
+        <%= image_tag @nursemaid.image.url(:large), class: 'img-show img-responsive' if @nursemaid.image? %>
       </div>
-      <div class="experience">
-        <p>
-          Опыт: <%= @nursemaid.experience %>
-        </p>
-      </div>
-      <div class="medicine">
-        <p>
-          Медкнижка: <%= @nursemaid.medicine %>
-        </p>
-      </div>
-      <div class="video">
-        <p>
-        <%= @nursemaid.video %>
-        </p>
-      </div>
-      <div class="description">
-        <p>
-          Описание: <%= @nursemaid.description %>
-        </p>
-      </div>
-      <div class="price">
-        <p>
-        Стомиость: <%= @nursemaid.price %>
-        </p>
-      </div>
-      <div class="date">
-        <p>
-          <i>Дата регистрации: <%= @nursemaid.created_at.to_date.strftime("%d %B %Y") %></i>
-        </p>
-      </div>
-      <div class="btn-block">
-        <%= link_to 'Изменить профиль', edit_nursemaid_path(@nursemaid), class: 'btn btn-info' %>
-        <%= link_to 'Удалить', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger' %>
-        <%= link_to 'Назад', :back, class: 'btn btn-default' %>
-      </div>
+      <div class="col-md-8">
+        <div class="col-md-12">
+          <div class="education">
+            <p>
+              Образование: <%= @nursemaid.education %>
+            </p>
+          </div>
+          <div class="experience">
+            <p>
+              Опыт: <%= @nursemaid.experience %>
+            </p>
+          </div>
+          <div class="medicine">
+            <p>
+              Медкнижка: <%= @nursemaid.medicine %>
+            </p>
+          </div>
+          <div class="video">
+            <p>
+              <%= @nursemaid.video %>
+            </p>
+          </div>
+          <div class="description">
+            <p>
+              Описание: <%= @nursemaid.description %>
+            </p>
+          </div>
+          <div class="price">
+            <p>
+              Стомиость: <%= @nursemaid.price %>
+            </p>
+          </div>
+          <div class="date">
+            <p>
+              <i>Дата регистрации: <%= @nursemaid.created_at.to_date.strftime("%d %B %Y") %></i>
+            </p>
+          </div>
+          <div class="btn-block">
+            <%= link_to 'Изменить профиль', edit_nursemaid_path(@nursemaid), class: 'btn btn-info' %>
+            <%= link_to 'Удалить', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger' %>
+            <%= link_to 'Назад', :back, class: 'btn btn-default' %>
+          </div>
 
+        </div>
+
+      </div>
     </div>
   </div>
 </div>

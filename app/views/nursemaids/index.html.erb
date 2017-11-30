@@ -5,10 +5,36 @@
     </div>
   </div>
   <div class="row">
+    <% @nursemaids.each do |nursemaid| %>
+    <article class="nursemaid-<%= nursemaid.id %>">
+      <section class="nursemaid-head">
+        <h2><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></h2>
+        <small>
+          <time><%= nursemaid.created_at.to_date.strftime("%d %B %y") %></time>
+        </small>
+      </section>
+      <section class="nursemaid-summary clearfix">
+        <!--<div class="col-md-2">-->
+        <%= link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img-thumbnail thumb' if nursemaid.image? %>
+        <!--</div>-->
+        <!--<div class="col-md-10">-->
+          <p>Образование:<%= nursemaid.education %></p>
+          <p>Опыт работы: <%= nursemaid.experience %></p>
+          <p>Мединская книжка:<%= nursemaid.medicine %></p>
+          <p>Стоимость:<%= nursemaid.price %></p>
+          <p><%= nursemaid.description %></p>
+        <!--</div>-->
+      </section>
+    </article>
+        <hr>
+    <% end %>
+
+<div class="row">
     <div class="col-md-12">
       <table class="table .table-hover">
         <thead>
         <tr>
+          <td>Фото</td>
           <td>Имя</td>
           <td>Образование</td>
           <td>Опыт</td>
@@ -20,6 +46,7 @@
         </thead>
         <% @nursemaids.each do |nursemaid| %>
             <tr>
+              <td><%= link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img img-thumbnail thumb' if nursemaid.image? %></td>
               <td><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></td>
               <td><%= nursemaid.education %></td>
               <td><%= nursemaid.experience %></td>
@@ -31,6 +58,7 @@
         <% end %>
       </table>
     </div>
+</div>
   </div>
 </div>
 
