@@ -57,7 +57,7 @@ class NursemaidsController < ApplicationController
 
   private
   def nursemaid_params
-    params.require(:nursemaid).permit(:name, :education, :experience, :medicine, :video, :description, :price)
+    params.require(:nursemaid).permit(:name, :education, :experience, :medicine, :video, :description, :price, :image)
   end
 
   def set_nusermaid
