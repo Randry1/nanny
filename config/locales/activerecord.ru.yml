@@ -1,0 +1,26 @@
+ru:
+  activerecord:
+    models:
+      nursemaid: 'Няня'
+    attributes:
+      nursemaid:
+        name: "Имя"
+        education: "Образование"
+        experience: "Опыт"
+        medicine: "Медкнижка"
+        description: "Описание"
+        video: "Видео"
+        price: "Стоимость"
+        created_at: "Дата создания"
+        updated_at: "Дата обнавления"
+        image: "Фото"
+
+    errors:
+      messages:
+        blank: 'не может быть пустым'
+
+  common:
+    errors: 'При заполнении формы возникли ошибки'
+    back: 'Назад'
+    save: 'Сохранить'
+
