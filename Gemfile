@@ -39,6 +39,7 @@ gem 'carrierwave', '~> 1.0'
 #Изменяет картинки
 gem "mini_magick"
 gem "rmagick", '2.15.4'
+gem "trix"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

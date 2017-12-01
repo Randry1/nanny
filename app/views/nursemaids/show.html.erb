@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-4">
-        <%= image_tag @nursemaid.image.url(:large), class: 'img-show img-responsive' if @nursemaid.image? %>
+        <%= @nursemaid.image? ? (image_tag @nursemaid.image.url(:large), class: 'img-show img-responsive') : (image_tag '/img/no-photo.jpg', class: 'img-show img-responsive')  %>
       </div>
       <div class="col-md-8">
         <div class="col-md-12">
@@ -31,11 +31,6 @@
               <%= @nursemaid.video %>
             </p>
           </div>
-          <div class="description">
-            <p>
-              Описание: <%= @nursemaid.description %>
-            </p>
-          </div>
           <div class="price">
             <p>
               Стомиость: <%= @nursemaid.price %>
@@ -54,6 +49,15 @@
 
         </div>
 
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="description">
+        <p>
+          Описание: <%= @nursemaid.description.html_safe %>
+        </p>
       </div>
     </div>
   </div>
