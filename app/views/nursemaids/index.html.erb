@@ -14,16 +14,12 @@
         </small>
       </section>
       <section class="nursemaid-summary clearfix">
-        <!--<div class="col-md-2">-->
-        <%= link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img-thumbnail thumb' if nursemaid.image? %>
-        <!--</div>-->
-        <!--<div class="col-md-10">-->
+        <%= nursemaid.image? ? (link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img-thumbnail thumb') : (link_to((image_tag '/img/no-photo-thumb.jpg'), nursemaid_path(nursemaid.id), class: 'img-thumbnail thumb'))  %>
           <p>Образование:<%= nursemaid.education %></p>
           <p>Опыт работы: <%= nursemaid.experience %></p>
           <p>Мединская книжка:<%= nursemaid.medicine %></p>
           <p>Стоимость:<%= nursemaid.price %></p>
-          <p><%= nursemaid.description %></p>
-        <!--</div>-->
+          <p><%= (strip_tags(nursemaid.description)).truncate(200) %></p>
       </section>
     </article>
         <hr>
@@ -46,14 +42,14 @@
         </thead>
         <% @nursemaids.each do |nursemaid| %>
             <tr>
-              <td><%= link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img img-thumbnail thumb' if nursemaid.image? %></td>
+              <td><%= nursemaid.image? ? (link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img img-thumbnail thumb') : (link_to((image_tag '/img/no-photo-thumb.jpg'), nursemaid_path(nursemaid.id), class: 'img-thumbnail thumb')) %></td>
               <td><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></td>
               <td><%= nursemaid.education %></td>
               <td><%= nursemaid.experience %></td>
               <td><%= nursemaid.medicine %></td>
               <td><%= nursemaid.price %></td>
               <td><%= nursemaid.video %></td>
-              <td><%= nursemaid.description %></td>
+              <td><%= strip_tags(nursemaid.description).truncate(200) %></td>
             </tr>
         <% end %>
       </table>
