@@ -3,7 +3,7 @@ class NursemaidsController < ApplicationController
   before_action :set_nusermaid, only: [:show, :edit, :update, :destroy]
 
   def index
-    @nursemaids = Nursemaid.all
+    @nursemaids = Nursemaid.paginate(:page => params[:page], :per_page => 5)
   end
 
   def new
