@@ -1,2 +1,5 @@
 ru:
   hello: "Привет"
+  will_paginate:
+    previous_label: "&larr; Назад"
+    next_label: "Вперед &rarr;"
