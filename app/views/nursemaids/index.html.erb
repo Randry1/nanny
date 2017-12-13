@@ -5,57 +5,10 @@
     </div>
   </div>
   <div class="row">
-    <% @nursemaids.each do |nursemaid| %>
-    <article class="nursemaid-<%= nursemaid.id %>">
-      <section class="nursemaid-head">
-        <h2><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></h2>
-        <small>
-          <time><%= nursemaid.created_at.to_date.strftime("%d %B %y") %></time>
-        </small>
-      </section>
-      <section class="nursemaid-summary clearfix">
-        <%= nursemaid.image? ? (link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img-thumbnail thumb') : (link_to((image_tag '/img/no-photo-thumb.jpg'), nursemaid_path(nursemaid.id), class: 'img-thumbnail thumb'))  %>
-          <p>Образование:<%= nursemaid.education %></p>
-          <p>Опыт работы: <%= nursemaid.experience %></p>
-          <p>Мединская книжка:<%= nursemaid.medicine %></p>
-          <p>Стоимость:<%= nursemaid.price %></p>
-          <p><%= (strip_tags(nursemaid.description)).truncate(200) %></p>
-      </section>
-    </article>
-        <hr>
-    <% end %>
+    <%= render  @nursemaids %>
+
     <%= will_paginate @nursemaids, renderer: "BootstrapPaginationHelper::LinkRenderer" %>
 
-<div class="row">
-    <div class="col-md-12">
-      <table class="table .table-hover">
-        <thead>
-        <tr>
-          <td>Фото</td>
-          <td>Имя</td>
-          <td>Образование</td>
-          <td>Опыт</td>
-          <td>Медкнижка</td>
-          <td>Цена</td>
-          <td>video</td>
-          <td>Описание</td>
-        </tr>
-        </thead>
-        <% @nursemaids.each do |nursemaid| %>
-            <tr>
-              <td><%= nursemaid.image? ? (link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img img-thumbnail thumb') : (link_to((image_tag '/img/no-photo-thumb.jpg'), nursemaid_path(nursemaid.id), class: 'img-thumbnail thumb')) %></td>
-              <td><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></td>
-              <td><%= nursemaid.education %></td>
-              <td><%= nursemaid.experience %></td>
-              <td><%= nursemaid.medicine %></td>
-              <td><%= nursemaid.price %></td>
-              <td><%= nursemaid.video %></td>
-              <td><%= strip_tags(nursemaid.description).truncate(200) %></td>
-            </tr>
-        <% end %>
-      </table>
-    </div>
-</div>
   </div>
 </div>
 
