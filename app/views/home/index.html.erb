@@ -1,0 +1,25 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+<div class="col-md-12">
+  <% @nursemaids.each do |nursemaid| %>
+      <article class="nursemaid-<%= nursemaid.id %>">
+        <section class="nursemaid-head">
+          <h2><%= link_to nursemaid.name, nursemaid_path(nursemaid.id)  %></h2>
+          <small>
+            <time><%= nursemaid.created_at.to_date.strftime("%d %B %y") %></time>
+          </small>
+        </section>
+        <section class="nursemaid-summary clearfix">
+          <%= nursemaid.image? ? (link_to (image_tag nursemaid.image.url(:thumb)), nursemaid_path(nursemaid.id) , class: 'img-thumbnail thumb') : (link_to((image_tag '/img/no-photo-thumb.jpg'), nursemaid_path(nursemaid.id), class: 'img-thumbnail thumb'))  %>
+          <p>Образование:<%= nursemaid.education %></p>
+          <p>Опыт работы: <%= nursemaid.experience %></p>
+          <p>Мединская книжка:<%= nursemaid.medicine %></p>
+          <p>Стоимость:<%= nursemaid.price %></p>
+          <p><%= (strip_tags(nursemaid.description)).truncate(200) %></p>
+        </section>
+      </article>
+      <hr>
+  <% end %>
+  <%= will_paginate @nursemaids, renderer: "BootstrapPaginationHelper::LinkRenderer" %>
+</div>
+

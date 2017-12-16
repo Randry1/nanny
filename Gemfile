@@ -42,6 +42,8 @@ gem "rmagick", '2.15.4'
 gem "trix"
 #гем для постраничной загрузки массива информаци
 gem 'will_paginate'
+#devise
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
