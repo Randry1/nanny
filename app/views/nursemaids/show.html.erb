@@ -42,8 +42,10 @@
             </p>
           </div>
           <div class="btn-block">
-            <%= link_to 'Изменить профиль', edit_nursemaid_path(@nursemaid), class: 'btn btn-info' %>
-            <%= link_to 'Удалить', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger' %>
+            <% if user_signed_in? %>
+                <%= link_to 'Изменить профиль', edit_nursemaid_path(@nursemaid), class: 'btn btn-info' %>
+                <%= link_to 'Удалить', nursemaid_path(@nursemaid), method: :delete, data: {confirm: 'Вы уверены?'}, class: 'btn btn-danger' %>
+            <% end %>
             <%= link_to 'Назад', :back, class: 'btn btn-default' %>
           </div>
 
