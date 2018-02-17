@@ -38,7 +38,7 @@ gem 'bootstrap3-rails'
 gem 'carrierwave', '~> 1.0'
 #Изменяет картинки
 gem "mini_magick"
-gem "rmagick", '2.15.4'
+gem "rmagick"
 gem "trix"
 #гем для постраничной загрузки массива информаци
 gem 'will_paginate'

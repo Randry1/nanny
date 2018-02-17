@@ -4,6 +4,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
+  #Как проверить работает ли это может нужно удалить??
+  CarrierWave.configure do |config|
+    config.ignore_processing_errors = true
+  end
+
+  begin
+    # attaching code
+  rescue CarrierWave::ProcessingError => error
+    raise error.cause
+  end
+  MiniMagick.logger.level = Logger::DEBUG
+  #------------------------------------------
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
